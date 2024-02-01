@@ -35,5 +35,5 @@ form.addEventListener("click", e => {
             title: '❌',
             message: `Rejected promise in ${delay} ms!`
         }
-        )), form.reset()
+        )),delay,  form.reset()
 }) 
