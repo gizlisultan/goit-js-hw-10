@@ -26,14 +26,16 @@ form.addEventListener("submit", e => {
   const value = form.state.value;
     makePromise({ value , delay})
         .then(value =>
-            iziToast.show({
-                title: '✔️',
+            iziToast.success({
+                title: '',
                 message: `Fulfilled promise in ${delay} ms!`,
+                
             }))
 
-        .catch(error => iziToast.show({
-            title: '❌',
-            message: `Rejected promise in ${delay} ms!`
+        .catch(delay => iziToast.error({
+            title: '',
+            message: `Rejected promise in ${delay} ms!`,
+            
         }
         )), form.reset()
 }) 
