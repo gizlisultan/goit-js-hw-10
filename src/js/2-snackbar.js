@@ -12,19 +12,19 @@ const makePromise = ({ value ,delay }) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (value === 'fulfilled') {
-                resolve(value);
+                resolve(delay);
             } else {
-                reject(value);
+                reject(delay);
             }
         }, delay);
     });
 }
 
-form.addEventListener("click", e => {
+form.addEventListener("submit", e => {
     e.preventDefault()
   const delay = form.delay.value;
   const value = form.state.value;
-    makePromise({ value ,delay})
+    makePromise({ value , delay})
         .then(value =>
             iziToast.show({
                 title: '✔️',
@@ -35,5 +35,5 @@ form.addEventListener("click", e => {
             title: '❌',
             message: `Rejected promise in ${delay} ms!`
         }
-        )),delay,  form.reset()
+        )), form.reset()
 }) 

@@ -76,7 +76,7 @@ startBtn.addEventListener("click", e => {
             seconds.textContent = addLeadingZero(time.seconds)
             
         }
-    }, 1000,startBtn.disabled = true)
+    }, 1000, startBtn.disabled = true, date.disabled = true)
 })
 function addLeadingZero(value) {
     const numb = String(value)
